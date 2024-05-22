@@ -10,6 +10,8 @@ import '../utils/common_widgets.dart';
 import 'app_textfield.dart';
 
 class LocationWidget extends StatefulWidget {
+  const LocationWidget({super.key});
+
   @override
   State<LocationWidget> createState() => _LocationWidgetState();
 }

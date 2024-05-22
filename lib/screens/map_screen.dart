@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:location_reminder_app/utils/common_widgets.dart';
-
-import '../services/notification_services.dart';
+import 'package:location_reminder_app/widget/location_widget.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -11,8 +9,6 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-
-
   @override
   void initState() {
     // TODO: implement initState
@@ -27,31 +23,7 @@ class _MapScreenState extends State<MapScreen> {
         title: const Text('Map Screen'),
         backgroundColor: Colors.blue,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              commonButton(
-                title: "Toast Message",
-                onTap: () {
-
-                },
-                backgroundColor: Colors.black26,
-              ),
-              commonButton(
-                title: "Notification",
-                onTap: () {
-
-                },
-                backgroundColor: Colors.black26,
-              ),
-            ],
-          ),
-          const SizedBox(height: 60)
-        ],
-      ),
+      body: const LocationWidget(),
     );
   }
 }
