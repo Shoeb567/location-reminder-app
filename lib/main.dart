@@ -4,15 +4,12 @@ import 'package:location_reminder_app/services/notification_services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final NotificationService notificationService = NotificationService();
-  notificationService.initialize();
-  runApp( MyApp());
-
+  NotificationService().initialize();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
-   MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

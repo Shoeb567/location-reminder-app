@@ -11,7 +11,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  late final NotificationService notificationService;
+
 
   @override
   void initState() {
@@ -36,18 +36,14 @@ class _MapScreenState extends State<MapScreen> {
               commonButton(
                 title: "Toast Message",
                 onTap: () {
-                  commonToast(message: "Check Toast Message");
+
                 },
                 backgroundColor: Colors.black26,
               ),
               commonButton(
                 title: "Notification",
                 onTap: () {
-                  notificationService.showNotification(
-                    0,
-                    'Test Notification',
-                    'This is the body of the test notification.',
-                  );
+
                 },
                 backgroundColor: Colors.black26,
               ),
