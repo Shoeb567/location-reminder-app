@@ -6,7 +6,6 @@ Widget? commonToast({String? message}) {
       msg: message ?? "",
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
-      // Also possible "TOP" and "CENTER"
       backgroundColor: Colors.black,
       textColor: Colors.white);
   return null;

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "93170415243",
+    "project_id": "location-reminder-app-424013",
+    "storage_bucket": "location-reminder-app-424013.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93170415243:android:389c75d7a019211930468e",
+        "android_client_info": {
+          "package_name": "com.example.location_reminder_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlMOuS2_VVPFNllDfwpdeMEfH2iqQktLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
