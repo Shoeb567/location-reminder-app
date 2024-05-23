@@ -83,7 +83,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                 myLocationButtonEnabled: true,
                 myLocationEnabled: true,
                 onTap: (LatLng argument) {
-                  addMarkerDialog(argument);
+                  addMarkerDialog(argument, context);
                 },
               );
             },
@@ -95,13 +95,14 @@ class _LocationWidgetState extends State<LocationWidget> {
     );
   }
 
-  void addMarkerDialog(LatLng argument) {
+  void addMarkerDialog(LatLng argument, BuildContext context) {
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const Text("Add Location Details"),
                 const SizedBox(height: 10),
@@ -125,13 +126,13 @@ class _LocationWidgetState extends State<LocationWidget> {
             actions: <Widget>[
               OutlinedButton(
                 onPressed: () {
-                  checkValidationAndAddMarker(argument);
+                  checkValidationAndAddMarker(argument, context);
                 },
                 child: const Text('Add'),
               ),
               OutlinedButton(
                 onPressed: () {
-                  clearDialog();
+                  clearDialog(context);
                 },
                 child: const Text('Cancel'),
               ),
@@ -140,27 +141,27 @@ class _LocationWidgetState extends State<LocationWidget> {
         });
   }
 
-  void checkValidationAndAddMarker(LatLng locationOfMarker) {
+  void checkValidationAndAddMarker(LatLng locationOfMarker, BuildContext context) {
     if (nameController.text.trim().isEmpty) {
       commonToast(message: "Please enter name.");
     } else if (addressController.text.trim().isEmpty) {
       commonToast(message: "Please enter Address.");
     } else {
-      addMarker(locationOfMarker);
+      addMarker(locationOfMarker, context);
     }
   }
 
-  addMarker(LatLng locationOfMarker) {
+  addMarker(LatLng locationOfMarker, BuildContext context) {
     _markers.add(Marker(
         markerId: MarkerId(nameController.text),
         position: locationOfMarker,
         infoWindow: InfoWindow(title: nameController.text, snippet: addressController.text)));
     // added marker in a stream ...
     markerAddNotifier.value = _markers;
-    clearDialog();
+    clearDialog(context);
   }
 
-  clearDialog() {
+  clearDialog(BuildContext context) {
     nameController.clear();
     addressController.clear();
     Navigator.pop(context);

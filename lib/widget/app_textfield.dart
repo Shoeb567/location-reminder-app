@@ -224,7 +224,7 @@ class AppTextFieldState extends State<AppTextField> {
                             fontSize: widget.fontSize ?? 12.0,
                             fontWeight: FontWeight.w600,
                           ),
-                          suffixIcon: widget.suffixIcon?.call(isValid, widget.controller!.text),
+                          suffixIcon: widget.suffixIcon?.call(isValid, widget.controller?.text ?? ''),
                           suffixIconConstraints: BoxConstraints.tight(
                               Size(widget.suffixIconSize ?? 20.0, widget.suffixIconSize ?? 20.0)),
                           enabled: widget.enabled,

@@ -13,7 +13,7 @@ class NotificationService {
 
   Future<void> initialize() async {
     const AndroidInitializationSettings initializationSettingsAndroid =
-        AndroidInitializationSettings('@drawable/ic_stat_notify');
+        AndroidInitializationSettings('@mipmap/ic_launcher');
 
     const InitializationSettings initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
@@ -24,9 +24,9 @@ class NotificationService {
 
   Future<void> showNotification(int id, String title, String body) async {
     const AndroidNotificationDetails androidPlatformChannelSpecifics = AndroidNotificationDetails(
-      'your_channel_id',
-      'your_channel_name',
-      channelDescription: 'your_channel_description',
+      'location_reminder_app',
+      'Location Reminder App',
+      channelDescription: 'Location Reminder App',
       importance: Importance.max,
       priority: Priority.high,
       showWhen: false,
