@@ -157,8 +157,8 @@ class _LocationWidgetState extends State<LocationWidget> {
         position: locationOfMarker,
         infoWindow: InfoWindow(title: nameController.text, snippet: addressController.text)));
     // added marker in a stream ...
-    markerAddNotifier.value = _markers;
     clearDialog(context);
+    markerAddNotifier.value = [..._markers];
   }
 
   clearDialog(BuildContext context) {
