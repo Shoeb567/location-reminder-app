@@ -10,7 +10,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="location_reminder_app">
 
-        <receiver
+        <!--<receiver
             android:name="${applicationName}"
             android:enabled="true"
             android:exported="true"
@@ -19,7 +19,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </receiver>
+        </receiver>-->
 
         <activity
             android:name=".MainActivity"
